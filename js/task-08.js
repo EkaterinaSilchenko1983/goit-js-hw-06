@@ -4,16 +4,13 @@ form.addEventListener("submit", onFormSubmit);
 
 function onFormSubmit(event) {
   event.preventDefault();
+  const mail = event.currentTarget.elements.email.value;
+  const password = event.currentTarget.elements.password.value;
 
-  if (
-    event.currentTarget.elements.email.value === "" ||
-    event.currentTarget.elements.password.value === ""
-  ) {
+  if (mail === "" || password === "") {
     alert("Все поля должны быть заполнены");
   }
 
-  const mail = event.currentTarget.elements.email.value;
-  const password = event.currentTarget.elements.password.value;
   const formData = {
     mail,
     password,
